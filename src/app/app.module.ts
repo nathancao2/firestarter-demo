@@ -13,7 +13,6 @@ import { MatListModule } from '@angular/material/list';
 import { SharedModule } from './shared/shared.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire';
 
 
 @NgModule({
@@ -32,8 +31,7 @@ import { AngularFireModule } from '@angular/fire';
     MatIconModule,
     MatListModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    ],
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })
