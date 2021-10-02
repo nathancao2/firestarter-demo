@@ -12,7 +12,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./email-login.component.scss']
 })
 export class EmailLoginComponent implements OnInit {
-  form: FormGroup;
+  form!: FormGroup;
 
   type: 'login' | 'signup' | 'reset' = 'signup';
   loading = false;
@@ -70,8 +70,8 @@ export class EmailLoginComponent implements OnInit {
   async onSubmit() {
     this.loading = true;
 
-    const email = this.email.value;
-    const password = this.password.value;
+    const email = this.email?.value;
+    const password = this.password?.value;
 
     try {
       if (this.isLogin) {
@@ -85,7 +85,7 @@ export class EmailLoginComponent implements OnInit {
         this.serverMessage = 'Check your email';
       }
     } catch (err) {
-      this.serverMessage = err;
+      this.serverMessage = err as string;
     }
 
     this.loading = false;
